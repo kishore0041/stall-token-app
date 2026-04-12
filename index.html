@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Selva Ganapathi Tiffen Center — Billing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-brand-row">
+                <div class="header-deity" title="Lord Ganesha">
+                    <img src="images/ganesha.jpg" width="320" height="320" alt="Lord Ganesha" loading="eager" decoding="async">
+                </div>
+                <div class="header-center">
+                    <div class="shop-name">Selva Ganapathi Tiffen Center</div>
+                    <p class="owner-line">Proprietor: DEEPA</p>
+                    <p class="address-line">TVS Main Street, Kamaraj Nagar, Redhills, Chennai&nbsp;–&nbsp;600052</p>
+                    <p class="tagline">Order &amp; billing</p>
+                </div>
+                <div class="header-deity" title="Goddess Lakshmi">
+                    <img src="images/lakshmi.jpg" width="320" height="320" alt="Goddess Lakshmi" loading="eager" decoding="async">
+                </div>
+            </div>
+        </header>
+
+        <div class="content">
+            <section class="menu-section" aria-label="Menu">
+                <div class="section-title">Menu</div>
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Search items…" aria-label="Search menu">
+                </div>
+                <div class="food-grid" id="foodGrid"></div>
+            </section>
+
+            <section class="cart-section" aria-label="Current order">
+                <div class="section-title">Current order</div>
+                <div id="cartItems" class="cart-items">
+                    <div class="empty-cart">
+                        Cart is empty.<br>Add items from the menu.
+                    </div>
+                </div>
+                <div class="bill-summary totals-only" id="billSummary">
+                    <div class="summary-row total">
+                        <span>Total</span>
+                        <span>₹0.00</span>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button type="button" class="btn btn-primary" id="btnViewBill">View bill</button>
+                    <button type="button" class="btn btn-success" id="btnSaveOrder">Save order</button>
+                    <button type="button" class="btn btn-secondary" id="btnClearCart">Clear cart</button>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="site-footer-inner">
+            <span class="creator-label">Designed &amp; developed by</span>
+            <div class="creator-name">KICH <span class="creator-tech">TECHNOLOGIEs</span></div>
+        </div>
+    </footer>
+
+    <div id="billModal" class="bill-modal" role="dialog" aria-modal="true" aria-labelledby="billModalTitle" hidden>
+        <div class="bill-modal-backdrop" id="billModalBackdrop"></div>
+        <div class="bill-modal-panel">
+            <div class="bill-modal-toolbar">
+                <h2 id="billModalTitle" class="bill-modal-title">Bill preview</h2>
+                <div class="bill-modal-actions">
+                    <button type="button" class="bill-modal-btn bill-modal-btn-print" id="billModalPrint">Print</button>
+                    <button type="button" class="bill-modal-btn bill-modal-btn-close" id="billModalClose">Close</button>
+                </div>
+            </div>
+            <iframe id="billFrame" class="bill-modal-frame" title="Receipt"></iframe>
+        </div>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/bill-receipt-css.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
